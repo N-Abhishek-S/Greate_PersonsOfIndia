@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Great Personalities of India</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* style.css */
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.btn {
+    display: inline-block;
+    background: #e63946;
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(230, 57, 70, 0.3);
+}
+
+.btn:hover {
+    background: #c1121f;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(230, 57, 70, 0.4);
+}
+
+/* Header Styles */
+header {
+    background: #fff;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 15px 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+header h1 {
+    font-size: 2.2rem;
+    color: #1d3557;
+    font-weight: 700;
+    background: linear-gradient(to right, #e63946, #457b9d);
+    -webkit-text-fill-color: transparent;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    font-weight: 600;
+    padding: 8px 0;
+    position: relative;
+    color: #1d3557;
+    transition: color 0.3s ease;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: #e63946;
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after {
+    width: 100%;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: #e63946;
+}
+
+.hero {
+    background: linear-gradient(135deg, rgba(29, 53, 87, 0.9), rgba(69, 123, 157, 0.9)), 
+                url('../images/india-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #fff;
+    text-align: center;
+    padding: 120px 0;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero h2 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 1s ease;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.9;
+    animation: fadeInUp 1s ease 0.3s forwards;
+    opacity: 0;
+}
+
+.hero .btn {
+    animation: fadeInUp 1s ease 0.6s forwards;
+    opacity: 0;
+}
+
+/* Featured Personalities */
+.featured-personalities {
+    padding: 80px 0;
+    background: #fff;
+}
+
+.featured-personalities h2 {
+    text-align: center;
+    margin-bottom: 60px;
+    font-size: 2.5rem;
+    color: #1d3557;
+    position: relative;
+}
+
+.featured-personalities h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: #e63946;
+    border-radius: 2px;
+}
+
+.personalities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.personality-card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.personality-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.7));
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.personality-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.personality-card:hover::before {
+    opacity: 1;
+}
+
+.personality-card img {
+    width: 100%;
+    height: 350px;
+    transition: transform 0.5s ease;
+}
+
+.personality-card:hover img {
+    transform: scale(1.05);
+}
+
+.personality-card h3 {
+    padding: 20px;
+    font-size: 1.5rem;
+    color: #1d3557;
+    position: relative;
+    z-index: 2;
+    transition: color 0.3s ease;
+}
+
+.personality-card:hover h3 {
+    color: #fff;
+}
+
+.personality-card p {
+    padding: 0 20px 20px;
+    color: #666;
+    position: relative;
+    z-index: 2;
+    transition: color 0.3s ease;
+}
+
+.personality-card:hover p {
+    color: #f1faee;
+}
+
+/* Footer Styles */
+footer {
+    background: #1d3557;
+    color: #f1faee;
+    padding: 40px 0 20px;
+    text-align: center;
+}
+
+footer p {
+    margin-bottom: 20px;
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(241, 250, 238, 0.1);
+    color: #f1faee;
+    border-radius: 50%;
+    margin: 0 10px;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: #e63946;
+    transform: translateY(-3px);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 992px) {
+    .hero h2 {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    header h1 {
+        margin-bottom: 15px;
+    }
+    
+    nav ul {
+        justify-content: center;
+    }
+    
+    nav ul li {
+        margin: 0 15px;
+    }
+    
+    .hero {
+        padding: 100px 0;
+        min-height: 70vh;
+    }
+    
+    .hero h2 {
+        font-size: 2.5rem;
+    }
+    
+    .hero p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    nav ul li {
+        margin: 5px 0;
+    }
+    
+    .hero {
+        padding: 80px 0;
+    }
+    
+    .hero h2 {
+        font-size: 2rem;
+    }
+    
+    .personalities-grid {
+        grid-template-columns: 1fr;
+    }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Great Personalities of India</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="information.html">Information</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>Celebrating India's Legendary Warriors and Visionaries</h2>
+            <p>Discover the lives and contributions of India's greatest kings, warriors and leaders who shaped the nation's history and culture.</p>
+            <a href="information.html" class="btn">Explore More</a>
+        </div>
+    </section>
+
+    <section class="featured-personalities">
+        <div class="container">
+            <h2>Featured Legends</h2>
+            <div class="personalities-grid">
+                <div class="personality-card">
+                    <img src="images/shivaji_Maharaj1.png" alt="Chhatrapati Shivaji Maharaj">
+                    <h3>Chhatrapati Shivaji Maharaj</h3>
+                    <p>Founder of the Maratha Empire and champion of Hindavi Swarajya.</p>
+                </div>
+                <div class="personality-card">
+                    <img src="images/Maharana_Pratap.png" alt="Maharana Pratap">
+                    <h3>Maharana Pratap</h3>
+                    <p>The Rajput king who defied Akbar and became a symbol of resistance.</p>
+                </div>
+                <div class="personality-card">
+                    <img src="images/Samrat_Ashok.jpg" alt="Samrat Ashoka">
+                    <h3>Samrat Ashoka</h3>
+                    <p>The great Mauryan emperor who spread Buddhism across Asia.</p>
+                </div>
+                <div class="personality-card">
+                    <img src="images/PritiviRaj_Chohan.png" alt="Prithviraj Chauhan">
+                    <h3>Prithviraj Chauhan</h3>
+                    <p>The last Hindu ruler of Delhi who bravely fought Muhammad Ghori.</p>
+                </div>
+                <div class="personality-card">
+                    <img src="images/APJ_Abdul_kalam.png" alt="APJ Abdul Kalam">
+                    <h3>APJ Abdul Kalam</h3>
+                    <p>Missile Man of India and the People's President who inspired millions.</p>
+                </div>
+                <div class="personality-card">
+                    <img src="images/Dr._Bhimrao_Ambedkar.png" alt="Dr. B.R. Ambedkar">
+                    <h3>Dr. B.R. Ambedkar</h3>
+                    <p>Architect of the Indian Constitution and champion of social justice.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Great Personalities of India. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

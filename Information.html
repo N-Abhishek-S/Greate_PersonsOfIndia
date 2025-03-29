@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Information | Great Personalities of India</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    margin: 0;
+    font-weight: 600;
+    letter-spacing: 1px;
+    background: linear-gradient(to right, #f39c12, #e74c3c);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    margin-left: 1.5rem;
+}
+
+nav a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+nav a:hover {
+    color: #f39c12;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+nav a.active {
+    color: #f39c12;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+nav a.active:after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 5px;
+    height: 5px;
+    background-color: #f39c12;
+    border-radius: 50%;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    
+    header h1 {
+        margin-bottom: 1rem;
+    }
+    
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    nav li {
+        margin: 0.5rem;
+    }
+}
+
+.info-section {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.info-section h2 {
+    text-align: center;
+    margin-bottom: 60px;
+    font-size: 2.8rem;
+    color: #1d3557;
+    position: relative;
+    font-weight: 700;
+}
+
+.info-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 4px;
+    background: #e63946;
+    border-radius: 2px;
+}
+
+.personality-info {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    margin-bottom: 50px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.personality-info:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.info-image {
+    flex: 1;
+    min-height: 400px;
+    overflow: hidden;
+}
+
+.info-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.personality-info:hover .info-image img {
+    transform: scale(1.05);
+}
+
+.info-text {
+    flex: 1;
+    padding: 40px;
+}
+
+.info-text h3 {
+    font-size: 2rem;
+    color: #1d3557;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.info-text h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: #e63946;
+}
+
+.info-text p {
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.info-text p strong {
+    color: #1d3557;
+}
+
+/* Alternate layout for even items */
+.personality-info.reverse {
+    flex-direction: row-reverse;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .info-section h2 {
+        font-size: 2.4rem;
+    }
+    
+    .info-text {
+        padding: 30px;
+    }
+    
+    .info-text h3 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .personality-info,
+    .personality-info.reverse {
+        flex-direction: column;
+    }
+    
+    .info-image {
+        min-height: 300px;
+        width: 100%;
+    }
+    
+    .info-section h2 {
+        font-size: 2.2rem;
+        margin-bottom: 40px;
+    }
+    
+    .info-text h3 {
+        font-size: 1.6rem;
+    }
+    
+    .info-text {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 576px) {
+    .info-section {
+        padding: 60px 0;
+    }
+    
+    .info-section h2 {
+        font-size: 1.8rem;
+    }
+    
+    .info-text h3 {
+        font-size: 1.4rem;
+    }
+    
+    .info-text p {
+        font-size: 1rem;
+    }
+}
+
+/* Footer Styles (consistent with other pages) */
+footer {
+    background: #1d3557;
+    color: #f1faee;
+    padding: 40px 0 20px;
+    text-align: center;
+    margin-top: 60px;
+}
+
+footer p {
+    margin-bottom: 20px;
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(241, 250, 238, 0.1);
+    color: #f1faee;
+    border-radius: 50%;
+    margin: 0 10px;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: #e63946;
+    transform: translateY(-3px);
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Great Personalities of India</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="information.html" class="active">Information</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="info-section">
+        <div class="container">
+            <h2>Detailed Information About Great Indians</h2>
+            
+            <div class="personality-info">
+                <div class="info-image">
+                    <img src="images/shivaji_Maharaj1.png" alt="Chhatrapati Shivaji Maharaj">
+                </div>
+                <div class="info-text">
+                    <h3>Chhatrapati Shivaji Maharaj (1630-1680)</h3>
+                    <p>Shivaji Bhonsale, revered as Chhatrapati Shivaji Maharaj, was an Indian warrior-king and the founder of the Maratha Empire. He established a competent and progressive civil rule with well-structured administrative organizations and revived ancient Hindu political traditions.</p>
+                    <p><strong>Key Contributions:</strong> Established Hindavi Swarajya, pioneered guerrilla warfare tactics, built naval forces, promoted Sanskrit and regional languages</p>
+                </div>
+            </div>
+
+            <div class="personality-info reverse">
+                <div class="info-image">
+                    <img src="images/Maharana_Pratap.png" alt="Maharana Pratap">
+                </div>
+                <div class="info-text">
+                    <h3>Maharana Pratap (1540-1597)</h3>
+                    <p>Maharana Pratap Singh was the Rajput king of Mewar, known for his fierce resistance against the Mughal emperor Akbar. He is celebrated as a symbol of Rajput valor and the spirit of independence for his refusal to submit to Mughal domination.</p>
+                    <p><strong>Key Contributions:</strong> Defense of Mewar's independence, Battle of Haldighati, Symbol of Rajput resistance</p>
+                </div>
+            </div>
+
+            <div class="personality-info">
+                <div class="info-image">
+                    <img src="images/PritiviRaj_Chohan.png" alt="Prithviraj Chauhan">
+                </div>
+                <div class="info-text">
+                    <h3>Prithviraj Chauhan (1166-1192)</h3>
+                    <p>Prithviraj III, popularly known as Prithviraj Chauhan, was a king from the Chahamana dynasty who ruled the territory of Sapadalaksha in present-day northwestern India. He is remembered for his military resistance against the Muslim invader Muhammad Ghori.</p>
+                    <p><strong>Key Contributions:</strong> Last Hindu ruler of Delhi, Military innovations, Legendary archery skills</p>
+                </div>
+            </div>
+
+            <div class="personality-info reverse">
+                <div class="info-image">
+                    <img src="images/Samrat_Ashok.jpg" alt="Samrat Ashoka">
+                </div>
+                <div class="info-text">
+                    <h3>Samrat Ashoka (304-232 BCE)</h3>
+                    <p>Ashoka, popularly known as Ashoka the Great, was an Indian emperor of the Maurya Dynasty who ruled almost all of the Indian subcontinent. After the Kalinga War, he converted to Buddhism and became a promoter of peace and non-violence.</p>
+                    <p><strong>Key Contributions:</strong> Spread of Buddhism, Rock edicts, Administrative reforms, Promotion of peace</p>
+                </div>
+            </div>
+
+            <div class="personality-info">
+                <div class="info-image">
+                    <img src="images/APJ_Abdul_kalam.png" alt="APJ Abdul Kalam">
+                </div>
+                <div class="info-text">
+                    <h3>APJ Abdul Kalam (1931-2015)</h3>
+                    <p>Avul Pakir Jainulabdeen Abdul Kalam was an Indian aerospace scientist and statesman who served as the 11th President of India. Known as the Missile Man of India, he played a pivotal role in India's civilian space program and military missile development.</p>
+                    <p><strong>Key Contributions:</strong> Integrated Guided Missile Development Program, Pokhran-II nuclear tests, Inspirational leadership</p>
+                </div>
+            </div>
+
+            <div class="personality-info reverse">
+                <div class="info-image">
+                    <img src="images/Dr._Bhimrao_Ambedkar.png" alt="Dr. B.R. Ambedkar">
+                </div>
+                <div class="info-text">
+                    <h3>Dr. B.R. Ambedkar (1891-1956)</h3>
+                    <p>Bhimrao Ramji Ambedkar was an Indian jurist, economist, politician and social reformer who inspired the Dalit Buddhist movement and campaigned against social discrimination. He was the principal architect of the Constitution of India.</p>
+                    <p><strong>Key Contributions:</strong> Drafting Indian Constitution, Social reforms, Dalit rights movement</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Great Personalities of India. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
